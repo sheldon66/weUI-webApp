@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>微贷网</title>
+     <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/0.4.2/weui.css"/>
+  </head>
+  <body>
+    <div class="page">
+
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+
+      {% if error %}
+        <div class="error"><strong>Error:</strong> {{ error }}</div>
+      {% endif %}
+
+      <br>
+
+      {% block content %}
+      {% endblock %}
+
+    </div>
+  </body>
+</html>

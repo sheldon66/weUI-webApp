@@ -1,0 +1,50 @@
+{% extends "_base.html" %}
+{% block content %}
+
+<h1>微贷网</h1>
+<br>
+<div class="add_profile">
+  <h3>填写您的资料:</h3>
+    <form action="{{ url_for('new_profile') }}" method="post">
+      {{ form.csrf_token }}
+      <div class="weui_cells_title">挂失与解挂</div>
+      <div class="weui_cells weui_cells_form">
+        <div class="weui_cell">
+            <div class="weui_cell_hd">
+                {{ form.name.label(class="weui_label") }}
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                {{ form.name(class="weui_input", placeholder="请输入名字")}}
+            </div>
+        </div>
+
+        <div class="weui_cell">
+            <div class="weui_cell_hd">
+                {{ form.ID_number.label(class="weui_label") }}
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                {{ form.ID_number(class="weui_input", placeholder="请输入身份证号码")}}
+            </div>
+        </div>
+
+        <div class="weui_cell">
+            <div class="weui_cell_hd">
+                {{ form.phone_number.label(class="weui_label") }}
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                {{ form.phone_number(class="weui_input", placeholder="请输入手机号码")}}
+            </div>
+        </div>
+      </div>
+
+
+          <input type="submit"  class="weui_btn weui_btn_primary" value="提交"></p>
+
+    </form>
+</div>
+
+
+
+
+
+{% endblock %}
